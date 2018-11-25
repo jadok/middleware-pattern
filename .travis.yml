@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - '8'
+  - '6'
+script:
+  - npm run lint
+  - npm run test:only
+  - npm run build
+  - npm run cover
+branches:
+  only:
+  - master

@@ -1,0 +1,45 @@
+{
+  "name": "middleware-pattern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run test:only && npm run cover",
+    "test:prod": "cross-env BABEL_ENV=production npm run test",
+    "test:watch": "npm test -- --watch",
+    "test:only": "nyc mocha --require babel-core/register --require babel-polyfill --recursive ./test/**/*.test.js",
+    "cover": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "lint": "eslint src test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadok/middleware-pattern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadok/middleware-pattern/issues"
+  },
+  "homepage": "https://github.com/jadok/middleware-pattern#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.9.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  },
+  "dependencies": {
+    "typy": "^2.0.1"
+  }
+}
