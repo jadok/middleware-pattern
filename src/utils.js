@@ -1,6 +1,6 @@
-import t from 'typy'
+const t = require('typy')
 
-import Task from './task'
+const Task = require('./task')
 
 const typeCheckup = (tasks) =>  {
   if (!t(tasks).isArray) {
@@ -11,4 +11,4 @@ const typeCheckup = (tasks) =>  {
   }, true)
 }
 
-export default typeCheckup
+module.exports = typeCheckup

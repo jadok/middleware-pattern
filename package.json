@@ -1,8 +1,8 @@
 {
-  "name": "middleware-pattern",
+  "name": "middleware-setup",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This provide you the ability to setup your application through severals async tasks.",
+  "main": "./src/index.js",
   "scripts": {
     "test": "npm run lint && npm run test:only && npm run cover",
     "test:prod": "cross-env BABEL_ENV=production npm run test",
@@ -16,12 +16,21 @@
     "type": "git",
     "url": "git+https://github.com/jadok/middleware-pattern.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "setup",
+    "task",
+    "pattern"
+  ],
+  "author": "Quentin Jadeau <jadok.6me@mail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jadok/middleware-pattern/issues"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "./lib"
+  ],
   "homepage": "https://github.com/jadok/middleware-pattern#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -35,7 +44,6 @@
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
-    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0"
   },
