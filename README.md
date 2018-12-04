@@ -1,9 +1,9 @@
 # Middleware-setup
 
-[![Build Status](https://travis-ci.org/jadok/middleware-pattern.svg?branch=master)](https://travis-ci.org/jadok/middleware-pattern)
-[![Coverage Status](https://coveralls.io/repos/github/jadok/middleware-pattern/badge.svg?branch=master)](https://coveralls.io/github/jadok/middleware-pattern?branch=master)
+[![Build Status](https://travis-ci.org/jadok/middleware-setup.svg?branch=master)](https://travis-ci.org/jadok/middleware-setup)
+[![Coverage Status](https://coveralls.io/repos/github/jadok/middleware-setup/badge.svg?branch=master)](https://coveralls.io/github/jadok/middleware-setup?branch=master)
 
-This library implement the middleware pattern to setup your application.
+This library implement the middleware setup to setup your application.
 This provide you the ability to setup your application through severals **async** tasks.
 
 ## Installation
@@ -13,7 +13,7 @@ This is a [Node.js](https://nodejs.org/en/) module available through the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
-$ npm install middleware-pattern
+$ npm install middleware-setup
 ```
 
 ## How it works
@@ -24,7 +24,7 @@ $ npm install middleware-pattern
 Implements
 
 ```javascript
-var { Task } = require('middleware-pattern');
+var { Task } = require('middleware-setup');
 
 class MyTask extends Task {
   async execute() {
@@ -39,7 +39,7 @@ module.exports = MyTask
 ### Setup the runner
 
 ```javascript
-var { runner } = require('middleware-design');
+var { runner } = require('middleware-setup');
 var someTask = require('./customTask');
 
 runner([

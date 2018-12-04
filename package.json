@@ -1,6 +1,6 @@
 {
   "name": "middleware-setup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This provide you the ability to setup your application through severals async tasks.",
   "main": "./src/index.js",
   "scripts": {
