@@ -1,14 +1,11 @@
-const t = require('typy')
+import t from 'typy'
 
-const Task = require('./task')
+import Task from './task'
 
-const typeCheckup = (tasks) =>  {
-  if (!t(tasks).isArray) {
-    return false
-  }
-  return tasks.reduce((acc, currTask) => {
-    return acc && currTask instanceof Task
-  }, true)
-}
+const typeCheckup = (tasks) => (
+  !t(tasks).isArray ?
+    false
+    : tasks.reduce((acc, currTask) => acc && currTask instanceof Task, true)
+)
 
-module.exports = typeCheckup
+export default typeCheckup

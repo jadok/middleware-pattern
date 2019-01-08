@@ -1,4 +1,4 @@
-const typeChecker = require('./utils')
+import typeChecker from'./utils'
 
 const runner = (configSetps) => new Promise((resolve, reject) => {
   if (!typeChecker(configSetps)) {
@@ -13,4 +13,4 @@ const runner = (configSetps) => new Promise((resolve, reject) => {
   return resolve(tasksList)
 })
 
-module.exports = runner
+export default runner

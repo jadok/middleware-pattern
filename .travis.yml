@@ -5,7 +5,7 @@ node_js:
 script:
   - npm run lint
   - npm run test:only
-  - npm run build
+  - npm run build:rollup
   - npm run cover
 branches:
   only:

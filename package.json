@@ -1,20 +1,28 @@
 {
   "name": "middleware-setup",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "This provide you the ability to setup your application through severals async tasks.",
-  "main": "./lib/index.js",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.ejs.js",
   "scripts": {
     "test": "npm run lint && npm run test:only && npm run cover",
     "test:prod": "cross-env BABEL_ENV=production npm run test",
     "test:watch": "npm test -- --watch",
     "test:only": "nyc mocha --require babel-core/register --require babel-polyfill --recursive ./test/**/*.test.js",
-    "cover": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
+    "cover": "NODE_ENV=test nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "build:rollup": "cross-env NODE_ENV=development rollup -c",
     "lint": "eslint src test"
+  },
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=7.8.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jadok/middleware-pattern.git"
+    "url": "git+https://github.com/jadok/middleware-setup.git"
   },
   "keywords": [
     "setup",
@@ -24,16 +32,15 @@
   "author": "Quentin Jadeau <jadok.6me@mail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jadok/middleware-pattern/issues"
+    "url": "https://github.com/jadok/middleware-setup/issues"
   },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "./lib"
-  ],
-  "homepage": "https://github.com/jadok/middleware-pattern#readme",
+  "homepage": "https://github.com/jadok/middleware-setup#readme",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -45,7 +52,11 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
     "mocha": "^5.2.0",
-    "nyc": "^13.1.0"
+    "nyc": "^13.1.0",
+    "rollup": "^1.0.0",
+    "rollup-plugin-babel": "^4.2.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0"
   },
   "dependencies": {
     "typy": "^2.0.1"

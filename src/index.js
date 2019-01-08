@@ -1,8 +1,8 @@
-const runner = require('./runner')
-const Task = require('./task')
-const typeCheckup = require('./utils')
+import runner from './runner'
+import Task from'./task'
+import typeCheckup from'./utils'
 
-module.exports = {
+export default {
   runner,
   Task,
   typeCheckup
