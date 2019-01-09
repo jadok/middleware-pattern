@@ -1,5 +1,6 @@
-const { assert } = require('chai')
-const Task = require('../src/task')
+import { assert } from 'chai'
+
+import Task from '../src/task'
 
 describe('Task', () => {
   it('should execute a default Task', async () => {
