@@ -1,6 +1,6 @@
-import runner from './runner'
-import Task from'./task'
-import typeCheckup from'./utils'
+import runner from './runner.js'
+import Task from'./task.js'
+import typeCheckup from'./utils.js'
 
 export default {
   runner,

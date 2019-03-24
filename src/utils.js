@@ -1,6 +1,6 @@
 import t from 'typy'
 
-import Task from './task'
+import Task from './task.js'
 
 const typeCheckup = (tasks) => (
   !t(tasks).isArray ?

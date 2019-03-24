@@ -1,4 +1,4 @@
-import typeChecker from'./utils'
+import typeChecker from'./utils.js'
 
 const runner = (configSetps) => new Promise((resolve, reject) => {
   if (!typeChecker(configSetps)) {
@@ -8,7 +8,7 @@ const runner = (configSetps) => new Promise((resolve, reject) => {
   const tasksList = configSetps.reduce((promiseChain, currentTask) =>
     promiseChain
       .then(chainResults =>
-        currentTask.execute().then(Array.prototype.concat.bind(chainResults))
+        currentTask.execute(chainResults).then(Array.prototype.concat.bind(chainResults))
       ), Promise.resolve([]))
   return resolve(tasksList)
 })

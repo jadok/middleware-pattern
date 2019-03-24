@@ -1,9 +1,10 @@
 {
   "name": "middleware-setup",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "This provide you the ability to setup your application through severals async tasks.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.ejs.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "npm run lint && npm run test:only && npm run cover",
     "test:prod": "cross-env BABEL_ENV=production npm run test",
@@ -11,7 +12,7 @@
     "test:only": "BABEL_ENV=test nyc ./node_modules/.bin/mocha --require @babel/register -r @babel/core test/**/*.spec.js --recursive",
     "cover": "NODE_ENV=test nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "build": "cross-env NODE_ENV=development rollup -c",
-    "build:prod": "cross-env NODE_ENV=production rollup -c",
+    "build:prod": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c",
     "lint": "eslint src test"
   },
   "files": [
@@ -48,11 +49,13 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
     "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
+    "nyc": "^13.3.0",
     "rollup": "^1.0.0",
     "rollup-plugin-babel": "^4.2.0",
     "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0"
+    "rollup-plugin-eslint": "^5.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^5.0.2"
   },
   "dependencies": {
     "typy": "^2.0.1"
